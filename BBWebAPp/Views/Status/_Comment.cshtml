@@ -1,0 +1,12 @@
+﻿@using BBWebAPp.Models;
+@{
+    List<Comment> CommentsOfStatus = ViewBag.CommentsOfStatus;
+}
+
+@foreach(var comment in CommentsOfStatus){
+    <p>
+        <a href="">@comment.PersonName</a>
+        <span style="font-size:10px;">@comment.Date.ToString("HH:MM, dd MMMM yyyy")</span>
+    </p>
+    <p class="likeCommentFont">@comment.CommentDesc</p>
+}

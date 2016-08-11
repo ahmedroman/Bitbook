@@ -1,0 +1,42 @@
+﻿@using BBWebAPp.Models;
+@{
+    Layout = null;
+    Person loggedInPerson = (Person)Session["LoggedInPerson"];
+    Person person = ViewBag.Person;
+    string[] name = loggedInPerson.Name.Split(' ');
+    string firstName = name[0];
+}
+<div id="header">
+    <div id="logo">
+        <h2><a href="/Home/Index">BitBook</a></h2>
+    </div>
+    <div id="searchBox">
+        <form method="GET" action="/Friends/SearchPerson">
+            <input type="text" name="Name" class="textBoxWidth" />
+            <button type="submit">
+                <img src="~/Images/srcImg.png" alt="Smiley face" height="15" width="15" /><br />
+            </button>
+        </form>
+    </div>
+    <div id="navigation">
+        <ul>
+            <li>
+                @if (loggedInPerson.Id == person.Id)
+                {
+                    <a class="selected" href="/Profile/ShowProfile/@loggedInPerson.Id">@firstName</a>
+                }
+                else
+                {
+                    <a href="/Profile/ShowProfile/@loggedInPerson.Id">@firstName</a>
+                }
+            </li>
+            <li>
+                <a href="/Home/Index">Home</a>
+            </li>
+            <li>
+                <a href="/Account/Login">Logout</a>
+            </li>
+        </ul>
+    </div>
+
+</div>

@@ -1,0 +1,102 @@
+﻿@using BBWebAPp.Models;
+@{
+    Layout = null;
+    Person loggedInPerson = (Person)Session["LoggedInPerson"];
+
+    List<Friends> friendList;
+    //List<Friends> friendList = ViewBag.FriendList;
+    if (ViewBag.FriendList != null)
+    {
+        friendList = ViewBag.FriendList;
+    }
+    else
+    {
+        friendList = new List<Friends>();
+    }
+
+    
+
+    //Person person = ViewBag.Person;
+    //string found = ViewBag.Found;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Profile</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/style/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wholeBody">
+        @RenderPage("~/Views/Shared/_Header.cshtml")
+        <div id="contentBody">
+            <div id="friendList">
+                @foreach (var friend in friendList)
+                {
+                    <div id="friend">
+                        <div id="friendImage">
+                            <img src="" alt="" />
+                        </div>
+                        <div id="friendName">
+                            <p><a href="/Profile/ShowProfile/@friend.FriendId">@friend.FriendName</a></p>
+
+                            @{
+                    string found = friend.FoundFriend;
+                    Person person = new Person();
+                    person.Id = friend.PersonId;
+                            }
+                            @if (found == "foundFriendRequest")
+                            {
+                                <input type="submit" value="Friend Request Sent" class="friendListForm" />
+                                <form action="/Friends/CancelRequest" method="POST" class="friendListForm">
+                                    <input type="hidden" name="PersonId" value="@loggedInPerson.Id" />
+                                    <input type="hidden" name="FriendRequestId" value="@friend.FriendRequestId" />
+                                    <input type="hidden" name="link" value="@Request.Url.ToString()" />
+                                    <input type="submit" name="" value="Cancel Request">
+                                </form>
+                            }
+                            else if (found == "foundFriendResponse")
+                            {
+                                <form method="POST" action="/Friends/AcceptRequest" class="friendListForm">
+                                    <input type="hidden" name="PersonId" value="@loggedInPerson.Id" />
+                                    <input type="hidden" name="FriendResponseId" value="@friend.FriendResponseId" />
+                                    <input type="hidden" name="FriendName" value="@friend.FriendName" />
+                                    <input type="hidden" name="link" value="@Request.Url.ToString()" />
+                                    <input type="submit" value="Response To Request" />
+                                </form>
+                                <form method="POST" action="/Friends/IgnoreRequest" class="friendListForm">
+                                    <input type="hidden" name="PersonId" value="@loggedInPerson.Id" />
+                                    <input type="hidden" name="FriendResponseId" value="@friend.FriendResponseId" />
+                                    <input type="hidden" name="link" value="@Request.Url.ToString()" />
+                                    <input type="submit" value="Ignore Request" />
+                                </form>
+
+                            }
+                            else if (found == "foundFriend")
+                            {
+                                <input type="submit" value="Friend" />
+                            }
+                            else
+                            {
+                                <form method="POST" action="/Friends/AddFriend/">
+                                    <input type="hidden" name="PersonId" value="@loggedInPerson.Id" />
+                                    <input type="hidden" name="FriendRequestId" value="@friend.FriendRequestId" />
+                                    <input type="hidden" name="FriendName" value="@friend.FriendName" />
+                                    <input type="hidden" name="link" value="@Request.Url.ToString()" />
+                                    <input type="submit" value="Add as Frind" />
+                                </form>
+
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

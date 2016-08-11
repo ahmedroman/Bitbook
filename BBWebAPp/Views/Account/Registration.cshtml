@@ -1,0 +1,63 @@
+﻿@model BBWebAPp.Models.Person
+@{
+    ViewBag.Title = "Registration";
+    Layout = null;
+    string message = ViewBag.Message;
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Welcome</title>
+    <link href="~/style/account.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="login">
+        <h2>Registration</h2>
+        @using (Html.BeginForm())
+        {
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(a => a.Name)</td>
+                    <td>@Html.TextBoxFor(a => a.Name)</td>
+                    <td>@Html.ValidationMessageFor(a => a.Name)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(a => a.Email)</td>
+                    <td>@Html.TextBoxFor(a => a.Email)</td>
+                    <td>@Html.ValidationMessageFor(a => a.Email)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(a => a.Password)</td>
+                    <td>@Html.PasswordFor(a => a.Password)</td>
+                    <td>@Html.ValidationMessageFor(a => a.Password)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(a => a.ConfirmPassword)</td>
+                    <td>@Html.PasswordFor(a => a.ConfirmPassword)</td>
+                    <td>@Html.ValidationMessageFor(a => a.ConfirmPassword)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(a => a.Gender)</td>
+                    <td>
+                        @Html.RadioButtonFor(a => a.Gender, "Male") Male
+                    @Html.RadioButtonFor(a => a.Gender, "Female") Female
+                </td>
+                <td>@Html.ValidationMessageFor(a => a.Gender)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+        }
+        <p>@message</p>
+        <p>Have an account ? <a href="/Account/Login">Login</a></p>
+    </div>
+    <script src="~/Scripts/jquery-2.2.3.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>
+
+

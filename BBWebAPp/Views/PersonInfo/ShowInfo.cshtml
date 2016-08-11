@@ -1,0 +1,60 @@
+﻿@using BBWebAPp.Models;
+@{
+    Layout = null;
+    Person loggedInPerson = (Person)Session["LoggedInPerson"];
+    Person person = ViewBag.Person;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Informations</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/style/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wholeBody">
+        @RenderPage("~/Views/Shared/_Header.cshtml")
+        <div id="contentBody">
+            <div id="leftBody">
+                <div id="innerLeftBody">
+                    <ul>
+                        <li>
+                            <img src="~/Images/who.png" alt="Smiley face" height="42" width="42" /><br />
+                        </li>
+                        <li>
+                            <a href="/Profile/ShowProfile/@person.Id">@person.Name</a>
+                        </li>
+                        <li>
+                            <a href="/PersonInfo/ShowInfo/@person.Id">Informations</a>
+                        </li>
+                        <li>
+                            <a href="/Friends/FriendList/@person.Id">Friends</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="mainBody">
+
+                <p><span>Address : </span>@person.Address</p>
+                <p><span>School : </span>@person.School</p>
+                <p><span>Relationship : </span>@person.Relationship</p>
+                <p><span>Work : </span>@person.Work</p>
+                <p><span>Hobby : </span>@person.Hobby</p>
+                <p><span>Language : </span>@person.Language</p>
+                @if (loggedInPerson.Id == person.Id)
+                {
+                    <a href="/PersonInfo/UpdateInfo/@person.Id" style="color:blue;">Edit Info</a>
+                }
+            </div>
+            <div id="rightBody">
+                <div id="innerRightBody">
+                    Frind
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

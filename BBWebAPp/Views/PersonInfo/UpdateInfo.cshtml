@@ -1,0 +1,83 @@
+﻿@model BBWebAPp.Models.Person
+@using BBWebAPp.Models;
+@{
+    Layout = null;
+    Person loggedInPerson = (Person)Session["LoggedInPerson"];
+    Person person = ViewBag.Person;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update Informations</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/style/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wholeBody">
+        @RenderPage("~/Views/Shared/_Header.cshtml")
+        <div id="contentBody">
+            <div id="leftBody">
+                <div id="innerLeftBody">
+                    <ul>
+                        <li>
+                            <img src="~/Images/who.png" alt="Smiley face" height="42" width="42" /><br />
+                        </li>
+                        <li>
+                            <a href="/Profile/ShowProfile/@person.Id">@person.Name</a>
+                        </li>
+                        <li>
+                            <a href="/PersonInfo/ShowInfo/@person.Id">Informations</a>
+                        </li>
+                        <li>
+                            <a href="/Friends/FriendList/@person.Id">Friends</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="mainBody">
+                @using (Html.BeginForm())
+                {
+                    <table>
+                        <tr>
+                            <td>@Html.LabelFor(a => a.Address)</td>
+                            <td>@Html.TextBoxFor(a => a.Address, new { Value = @person.Address })</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelFor(a => a.School)</td>
+                            <td>@Html.TextBoxFor(a => a.School, new { Value = @person.School })</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelFor(a => a.Relationship)</td>
+                            <td>@Html.TextBoxFor(a => a.Relationship, new { Value = @person.Relationship })</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelFor(a => a.Work)</td>
+                            <td>@Html.TextBoxFor(a => a.Work, new { Value = @person.Work })</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelFor(a => a.Hobby)</td>
+                            <td>@Html.TextBoxFor(a => a.Hobby, new { Value = @person.Hobby })</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelFor(a => a.Language)</td>
+                            <td>@Html.TextBoxFor(a => a.Language, new { Value = @person.Language })</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="Save"></td>
+                        </tr>
+                    </table>
+                }
+            </div>
+            <div id="rightBody">
+                <div id="innerRightBody">
+                    Frind
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

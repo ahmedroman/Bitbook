@@ -1,0 +1,194 @@
+﻿@model BBWebAPp.Models.Status
+@using BBWebAPp.Models;
+@{
+    Layout = null;
+    Person loggedInPerson = (Person)Session["LoggedInPerson"];
+    List<Status> statusList = ViewBag.StatusList;
+    Dictionary<int?, int?> likeCountOfSatus = ViewBag.LikeCountOfStatus;
+    string likeCount;
+    List<Like> likedByPerson = ViewBag.LikesByPerson;
+    string message = (string)TempData["message"];
+    //List<Comment> CommentsOfStatus = ViewBag.CommentsOfStatus;
+    List<Comment> CommentsOfStatus = (List<Comment>)TempData["CommentsOfStatus"];
+    ProfilePic profilePic = ViewBag.ProfilePic;
+    string strBase64Pro = Convert.ToBase64String(profilePic.Pic);
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/style/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wholeBody">
+        @RenderPage("~/Views/Shared/_Header.cshtml")
+        <div id="contentBody">
+            <div id="leftBody">
+                <div id="innerLeftBody">
+                    <ul>
+                        <li>
+                            <img src="data:image/png;base64,@strBase64Pro" height="130" width="130" id="profilePictureImg" />
+
+                            @*<img src="~/Images/who.png" alt="Smiley face" height="42" width="42" /><br />*@
+                        </li>
+                        <li>
+                            <a href="/Profile/ShowProfile/@loggedInPerson.Id">@loggedInPerson.Name</a>
+                        </li>
+                        <li>
+                            <a href="/PersonInfo/UpdateInfo/@loggedInPerson.Id">Edit Info</a>
+                        </li>
+                        <li>
+                            <a href="/Friends/FriendList/@loggedInPerson.Id">Friends</a>
+                        </li>
+                        <li>
+                            <a href="/Friends/ShowRequest/@loggedInPerson.Id">Show Requests</a>
+
+                        </li>
+                        <li>
+                            <a href="/Friends/SentRequests/@loggedInPerson.Id">Sent Requests</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="mainBody">
+                <div id="postStatus">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.TextAreaFor(a => a.Post)
+                        @*<input type="text" name="Post"/>*@
+                        <br />
+                        <input type="submit" value="Post" id="statusButton" />
+                    }
+                </div>
+
+                @foreach (var status in statusList)
+                {
+                    <div id="statusDiv">
+                        <div id="staus">
+                            <p>
+                                <a href="/Profile/ShowProfile/@status.PersonId">@status.PersonName</a>
+                                @if (status.PersonId == loggedInPerson.Id)
+                                {
+                                    <form action="/Status/DeletePost" method="post">
+                                        <input type="hidden" name="id" value="@status.Id" />
+                                        <input type="hidden" name="link" value="@Request.Url.ToString()" />
+                                        <input type="submit" value="Delete Post" class="submitLink marginDelete" onclick="return confirm('Are you sure?')" />
+
+                                    </form>
+                                }
+                            </p>
+                            <p class="date">
+                                @status.Date.ToString("d MMMM yyyy, HH:mm")
+                            </p>
+                            <p>@status.Post</p>
+                        </div>
+                        <div id="likeComment">
+
+                            @*Like Section*@
+
+                            @if (!likeCountOfSatus.ContainsKey(status.Id))
+                            {
+                                likeCount = "No one Liked this";
+                            }
+                            else
+                            {
+                                likeCount = likeCountOfSatus[status.Id] + "People Liked this";
+                            }
+                            @{bool liked = false;}
+                            @foreach (var like in likedByPerson)
+                            {
+                                if (like.StatusId == status.Id)
+                                {
+                                    liked = true;
+                                    break;
+                                }
+                            }
+                            <div id="like">
+                                @if (liked)
+                                {
+                                    <p class="likeCommentFont">
+                                        <a href="/Status/DeleteLike?StatusId=@status.Id&PersonId=@loggedInPerson.Id&PersonName=@loggedInPerson.Name&link=@Request.Url.ToString()">
+                                            Unlike
+                                        </a>
+                                        <a href="">@likeCount</a>
+                                    </p>
+                                }
+                                else
+                                {
+                                    <p class="likeCommentFont likeMargin">
+                                        <a href="/Status/SaveLike?StatusId=@status.Id&PersonId=@loggedInPerson.Id&PersonName=@loggedInPerson.Name&link=@Request.Url.ToString()">
+                                            Like
+                                        </a>
+                                        <a href="">@likeCount</a>
+                                    </p>
+
+                                }
+                            </div>
+                            @*Comment Section*@
+
+
+                            <p>
+                                <div id="commentSection">
+                                    @using (Ajax.BeginForm("GetComment", "Status", new AjaxOptions
+                                        {
+                                            HttpMethod = "post",
+                                            InsertionMode = InsertionMode.ReplaceWith,
+                                            UpdateTargetId = "commentSection"
+                                        }))
+                                    {
+                                        @*<form action="/Status/GetComment/" method="post">*@
+                                        <input type="hidden" name="StatusId" value="@status.Id" />
+                                        @*<input type="hidden" name="link" value="@Request.Url.ToString()" />*@
+                                <p><input type="submit" value="Read Comment" class="submitLink" /></p>
+                                        @*</form>*@
+
+
+                                    }
+                                    @*<a href="" id="readComment">Read Comments</a>*@
+
+                                </div>
+                                </p>
+                                <div id="postComment">
+                                    <form method="POST" id="commentForm" action="/Status/SaveComment/">
+
+                                        <p><input type="text" name="CommentDesc" /></p>
+                                        <input type="hidden" name="StatusId" value="@status.Id" />
+                                        <input type="hidden" name="PersonId" value="@loggedInPerson.Id" />
+                                        <input type="hidden" name="PersonName" value="@loggedInPerson.Name" />
+                                        <input type="hidden" name="link" value="@Request.Url.ToString()" />
+                                        <p><input type="submit" value="Comment"></p>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                }
+
+            </div>
+            <div id="rightBody">
+                <div id="innerRightBody">
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+        <script src="~/Scripts/jquery-2.2.3.js"></script>
+        <script src="~/Scripts/jquery.validate.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+        <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+        <script>
+            //$(document).ready(function () {
+            //    $("#readComment").click(function () {
+
+            //        $("#commentSection").toggle();
+            //        return false;
+            //    });
+            //});
+        </script>
+    </body>
+</html>

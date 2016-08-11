@@ -1,0 +1,76 @@
+c:\users\roman\documents\visual studio 2013\Projects\BBWebAPp\BBWebAPp\bin\BBWebAPp.dll.config
+c:\users\roman\documents\visual studio 2013\Projects\BBWebAPp\BBWebAPp\bin\BBWebAPp.dll
+c:\users\roman\documents\visual studio 2013\Projects\BBWebAPp\BBWebAPp\bin\BBWebAPp.pdb
+c:\users\roman\documents\visual studio 2013\Projects\BBWebAPp\BBWebAPp\bin\System.Web.Helpers.dll
+c:\users\roman\documents\visual studio 2013\Projects\BBWebAPp\BBWebAPp\bin\System.Web.Razor.dll
+c:\users\roman\documents\visual studio 2013\Projects\BBWebAPp\BBWebAPp\bin\System.Web.Webpages.Deployment.dll
+c:\users\roman\documents\visual studio 2013\Projects\BBWebAPp\BBWebAPp\bin\System.Web.Webpages.dll
+c:\users\roman\documents\visual studio 2013\Projects\BBWebAPp\BBWebAPp\bin\System.Web.Webpages.Razor.dll
+c:\users\roman\documents\visual studio 2013\Projects\BBWebAPp\BBWebAPp\bin\System.Web.Razor.xml
+c:\users\roman\documents\visual studio 2013\Projects\BBWebAPp\BBWebAPp\bin\System.Web.Webpages.xml
+c:\users\roman\documents\visual studio 2013\Projects\BBWebAPp\BBWebAPp\bin\System.Web.Webpages.Deployment.xml
+c:\users\roman\documents\visual studio 2013\Projects\BBWebAPp\BBWebAPp\bin\System.Web.Webpages.Razor.xml
+c:\users\roman\documents\visual studio 2013\Projects\BBWebAPp\BBWebAPp\bin\System.Web.Helpers.xml
+c:\users\roman\documents\visual studio 2013\Projects\BBWebAPp\BBWebAPp\obj\Debug\BBWebAPp.csprojResolveAssemblyReference.cache
+c:\users\roman\documents\visual studio 2013\Projects\BBWebAPp\BBWebAPp\obj\Debug\BBWebAPp.dll
+c:\users\roman\documents\visual studio 2013\Projects\BBWebAPp\BBWebAPp\obj\Debug\BBWebAPp.pdb
+c:\users\roman\documents\visual studio 2013\Projects\BBWebAPp\BBWebAPp\bin\Microsoft.Web.Infrastructure.dll
+c:\users\roman\documents\visual studio 2013\Projects\BBWebAPp\BBWebAPp\bin\System.Web.Mvc.dll
+c:\users\roman\documents\visual studio 2013\Projects\BBWebAPp\BBWebAPp\bin\System.Web.Mvc.xml
+C:\Users\Bdjobs\Desktop\bb\BBWebAPp\BBWebAPp\bin\BBWebAPp.dll.config
+C:\Users\Bdjobs\Desktop\bb\BBWebAPp\BBWebAPp\bin\BBWebAPp.dll
+C:\Users\Bdjobs\Desktop\bb\BBWebAPp\BBWebAPp\bin\BBWebAPp.pdb
+C:\Users\Bdjobs\Desktop\bb\BBWebAPp\BBWebAPp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Bdjobs\Desktop\bb\BBWebAPp\BBWebAPp\bin\System.Web.Helpers.dll
+C:\Users\Bdjobs\Desktop\bb\BBWebAPp\BBWebAPp\bin\System.Web.Mvc.dll
+C:\Users\Bdjobs\Desktop\bb\BBWebAPp\BBWebAPp\bin\System.Web.Razor.dll
+C:\Users\Bdjobs\Desktop\bb\BBWebAPp\BBWebAPp\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Bdjobs\Desktop\bb\BBWebAPp\BBWebAPp\bin\System.Web.WebPages.dll
+C:\Users\Bdjobs\Desktop\bb\BBWebAPp\BBWebAPp\bin\System.Web.WebPages.Razor.dll
+C:\Users\Bdjobs\Desktop\bb\BBWebAPp\BBWebAPp\bin\System.Web.Helpers.xml
+C:\Users\Bdjobs\Desktop\bb\BBWebAPp\BBWebAPp\bin\System.Web.Mvc.xml
+C:\Users\Bdjobs\Desktop\bb\BBWebAPp\BBWebAPp\bin\System.Web.Razor.xml
+C:\Users\Bdjobs\Desktop\bb\BBWebAPp\BBWebAPp\bin\System.Web.WebPages.xml
+C:\Users\Bdjobs\Desktop\bb\BBWebAPp\BBWebAPp\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Bdjobs\Desktop\bb\BBWebAPp\BBWebAPp\bin\System.Web.WebPages.Razor.xml
+C:\Users\Bdjobs\Desktop\bb\BBWebAPp\BBWebAPp\obj\Debug\BBWebAPp.dll
+C:\Users\Bdjobs\Desktop\bb\BBWebAPp\BBWebAPp\obj\Debug\BBWebAPp.pdb
+C:\Users\Bdjobs\Desktop\bb\BBWebAPp\BBWebAPp\obj\Debug\BBWebAPp.csprojResolveAssemblyReference.cache
+C:\Users\Roman\Documents\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\BBWebAPp.dll.config
+C:\Users\Roman\Documents\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\BBWebAPp.dll
+C:\Users\Roman\Documents\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\BBWebAPp.pdb
+C:\Users\Roman\Documents\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Roman\Documents\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.Helpers.dll
+C:\Users\Roman\Documents\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.Mvc.dll
+C:\Users\Roman\Documents\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.Razor.dll
+C:\Users\Roman\Documents\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Roman\Documents\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.WebPages.dll
+C:\Users\Roman\Documents\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.WebPages.Razor.dll
+C:\Users\Roman\Documents\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.Helpers.xml
+C:\Users\Roman\Documents\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.Mvc.xml
+C:\Users\Roman\Documents\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.Razor.xml
+C:\Users\Roman\Documents\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.WebPages.xml
+C:\Users\Roman\Documents\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Roman\Documents\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.WebPages.Razor.xml
+C:\Users\Roman\Documents\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\obj\Debug\BBWebAPp.dll
+C:\Users\Roman\Documents\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\obj\Debug\BBWebAPp.pdb
+C:\Users\Roman\Documents\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\obj\Debug\BBWebAPp.csprojResolveAssemblyReference.cache
+D:\dddddd\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\BBWebAPp.dll.config
+D:\dddddd\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\BBWebAPp.dll
+D:\dddddd\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\BBWebAPp.pdb
+D:\dddddd\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\Microsoft.Web.Infrastructure.dll
+D:\dddddd\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.Helpers.dll
+D:\dddddd\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.Mvc.dll
+D:\dddddd\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.Razor.dll
+D:\dddddd\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.WebPages.Deployment.dll
+D:\dddddd\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.WebPages.dll
+D:\dddddd\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.WebPages.Razor.dll
+D:\dddddd\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.Helpers.xml
+D:\dddddd\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.Mvc.xml
+D:\dddddd\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.Razor.xml
+D:\dddddd\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.WebPages.xml
+D:\dddddd\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.WebPages.Deployment.xml
+D:\dddddd\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\bin\System.Web.WebPages.Razor.xml
+D:\dddddd\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\obj\Debug\BBWebAPp.csprojResolveAssemblyReference.cache
+D:\dddddd\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\obj\Debug\BBWebAPp.dll
+D:\dddddd\Visual Studio 2013\Projects\final\BBWebAPp\BBWebAPp\obj\Debug\BBWebAPp.pdb
